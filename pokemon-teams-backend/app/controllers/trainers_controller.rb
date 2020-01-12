@@ -15,14 +15,19 @@ class TrainersController < ApplicationController
     render :json => @trainer
   end 
 
+  # def update
+  #   # byebug
+  #   @trainer = Trainer.find(params[:id])
+  #   @trainer.name = params[:name]
+  #   @trainer.save
+  #   render :json => @trainer 
+  #   # byebug
+  # end 
   def update
-    # byebug
     @trainer = Trainer.find(params[:id])
-    @trainer.name = params[:name]
-    @trainer.save
+    @trainer.name = params[:trainer][:name]
+    @trainer.save 
     render :json => @trainer 
-    # byebug
-  end 
-
+end 
 
 end

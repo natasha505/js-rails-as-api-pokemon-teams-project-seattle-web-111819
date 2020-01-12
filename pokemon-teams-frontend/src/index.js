@@ -80,9 +80,9 @@ const makeTeamCard = (trainer) => {   //team.id same as the trainers id
   })
 
   div.appendChild(pTag);
-  pTag.appendChild(ul);
-  pTag.appendChild(addPokemonButton);
-  pTag.appendChild(editTrainerButton);
+  div.appendChild(ul);
+  div.appendChild(addPokemonButton);
+  div.appendChild(editTrainerButton);
   
   return div;
 }
@@ -146,6 +146,6 @@ const updateTrainer = (trainer) => {
   .then(res => res.json())
   .then(data => {
     editedNode.replaceWith(makeTeamCard(data))
-    editedNode = null
+    // editedNode = null
   })
 }
